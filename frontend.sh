@@ -1,9 +1,11 @@
-#install ngnix
+#install nginx
 yum install nginx -y
+cp nginx/roboshop.conf /etc/nginx/default.d/roboshop.conf
+
 
 #Start & Enable Nginx service
 systemctl enable nginx
-systemctl start nginx
+systemctl restart nginx
 
 #Remove the default content that web server is serving
 rm -rf /usr/share/nginx/html/*
@@ -16,6 +18,9 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.z
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
+#Start & Enable Nginx service
+systemctl enable nginx
+systemctl restart nginx ; tail -f /var/log/messages
 #Create Nginx Reverse Proxy Configuration.
 #vim /etc/nginx/default.d/roboshop.conf
 
