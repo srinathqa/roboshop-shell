@@ -7,7 +7,7 @@ cp roboshop.conf /etc/nginx/default.d/roboshop.conf
 systemctl enable nginx
 systemctl restart nginx
 
-#Remove the default content that web server is serving
+#Remove the default content that web server
 rm -rf /usr/share/nginx/html/*
 
 #Download the roboshop frontend content
