@@ -8,7 +8,7 @@ yum install mysql-community-server -y
 systemctl enable mysqld
 systemctl restart mysqld
 
-#change the default root password
+#change the default root password to RoboShop@1
 mysql_secure_installation --set-root-pass RoboShop@1
 
 #check for working or not
